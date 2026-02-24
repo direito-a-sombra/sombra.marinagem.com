@@ -23,6 +23,10 @@
       background-color: var(--color-hl-0);
       border-radius: 50%;
 
+      &.nav-pulse {
+        animation: nav-pulse 1.6s ease-in-out infinite;
+      }
+
       &.opacity-0 { opacity: 0.20; }
       &.opacity-1 { opacity: 0.33; }
       &.opacity-2 { opacity: 0.46; }
@@ -37,5 +41,20 @@
         pointer-events: none;
       }
     }
+  }
+}
+
+@keyframes nav-pulse {
+  0% {
+    transform: scale(1);
+    background-color: var(--color-hl-0);
+  }
+  50% {
+    transform: scale(1.08);
+    background-color: #fff;
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--color-hl-0);
   }
 }

@@ -20,11 +20,22 @@
   --slide-transition: transform 650ms ease;
   --menu-height: 3rem;
   font-size: 15px;
+  --viewport-height: 100vh;
+  --panel-height: calc(100vh - var(--menu-height));
 }
 
 @media (max-width: 768px) {
   :root {
     font-size: 13px;
+    --viewport-height: 100dvh;
+    --panel-height: calc(100dvh - var(--menu-height));
+  }
+}
+
+@media (max-width: 768px) and (hover: none) {
+  :root {
+    --viewport-height: 100dvh;
+    --panel-height: calc(100dvh - var(--menu-height));
   }
 }
 
@@ -32,6 +43,7 @@ html, body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: "Cera";
+  overflow-x: hidden;
 }
 
 // Single-page slider
@@ -48,7 +60,7 @@ body.slider-body {
 
 .slider-page .panel {
   width: 100vw;
-  height: calc(100vh - var(--menu-height));
+  height: var(--panel-height);
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -68,7 +80,7 @@ body.slider-body {
   position: absolute;
   top: var(--menu-height);
   width: 100vw;
-  height: calc(100vh - var(--menu-height));
+  height: var(--panel-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,9 +100,10 @@ body.slider-body {
 .text-nav .text {
   margin: 0;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: 0.02em;
-  font-size: clamp(40px, 3.8vw, 52px);
+  /* Scale with viewport so the home text block fills the panel vertically */
+  font-size: clamp(24px, 5vh, 52px);
   font-weight: 600;
   text-align: justify;
   max-width: 75%;
@@ -141,5 +154,21 @@ body.detail-open .text-nav .sentence.active {
   button {
     pointer-events: auto;
     color: var(--color-bg);
+  }
+}
+
+/* Step the line-height up as viewports get smaller so the block fills more vertically */
+@media (max-width: 1024px) {
+  .text-nav .text {
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-nav .text {
+    /* On phones: slightly smaller type but taller lines so block fills more of the viewport */
+    font-size: clamp(20px, 5vw, 28px);
+    max-width: 90%;
+    line-height: 1.5;
   }
 }

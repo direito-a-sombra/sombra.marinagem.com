@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = Math.max(0, Math.min(index, panels.length - 1));
     lock = true;
     active = next;
+    // Reset scroll position of the target panel so we don't land mid-scroll
+    panels[next].scrollTop = 0;
     page.style.transform = `translateX(-${active * 100}vw)`;
     window.location.hash = active > 0 ? `/${idx2key[active]}` : "";
     setNavActive(active);
@@ -58,6 +60,47 @@ document.addEventListener("DOMContentLoaded", () => {
       else highlightAndGo(active - 1);
     },
     { passive: false }
+  );
+
+  // Touch swipe (mobile): horizontal swipe between sections
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  page.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.touches.length !== 1) return;
+      const t = e.touches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+    },
+    { passive: true }
+  );
+
+  page.addEventListener(
+    "touchend",
+    (e) => {
+      if (e.changedTouches.length !== 1) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      const adx = Math.abs(dx);
+      const ady = Math.abs(dy);
+
+      // Require a clear, deliberate horizontal swipe:
+      // - at least 40px in X
+      // - and significantly more horizontal than vertical (to avoid \"half\" moves)
+      if (adx < 40 || adx <= ady * 1.4) return;
+
+      if (dx < 0) {
+        // swipe left → next panel
+        highlightAndGo(active + 1);
+      } else {
+        // swipe right → previous panel
+        highlightAndGo(active - 1);
+      }
+    },
+    { passive: true }
   );
 
   document.addEventListener("keydown", (e) => {

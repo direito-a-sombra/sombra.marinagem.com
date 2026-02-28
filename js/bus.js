@@ -1,5 +1,5 @@
-const STOPS_URL = "https://direito-a-sombra.github.io/bus-view/data/stops.tgh.json";
-const BOXES_URL = "https://direito-a-sombra.github.io/bus-view/data/objs/stops2boxes.json";
+const STOPS_URL = "/bus-view/data/stops.tgh.json";
+const BOXES_URL = "/bus-view/data/objs/stops2boxes.json";
 
 const stops = [];
 const boxes = {};
@@ -164,7 +164,7 @@ function handleImageClick(evt) {
 }
 
 function createImageEl(stop) {
-  const imgSrc = `https://direito-a-sombra.github.io/bus-view/imgs/${stop.image}`;
+  const imgSrc = `/bus-view/imgs/${stop.image}`;
 
   const imgWrapperEl = document.createElement("div");
   imgWrapperEl.classList.add("image-wrapper");

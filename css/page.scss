@@ -71,14 +71,24 @@
     width: 100%;
 
     .scaled-image-container {
-      width: 50%;
-      margin: 0 auto;
+      width: 60%;
+      margin: 2rem auto 0;
+      overflow-y: hidden;
+
+      img {
+        margin: -5rem 0;
+      }
     }
 
     img {
       display: block;
       width: 100%;
     }
+  }
+
+  .image-container.border,
+  .scaled-image-container.border {
+    border: 2px #bbb solid;
   }
 
   .wide-image-container.video {

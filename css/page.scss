@@ -16,7 +16,10 @@
   text-align: left;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin-bottom: 2rem;
+  
+  &:last-of-type {
+    padding-bottom: 2rem;
+  }
 
   .sub-section-text {
     flex-grow: 1;
@@ -67,6 +70,11 @@
   .wide-image-container {
     width: 100%;
 
+    .scaled-image-container {
+      width: 50%;
+      margin: 0 auto;
+    }
+
     img {
       display: block;
       width: 100%;
@@ -76,10 +84,6 @@
   .wide-image-container.video {
     width: 100%;
     aspect-ratio: 16/9;
-
-    &:last-of-type {
-      margin-bottom: 2rem;
-    }
 
     video {
       display: block;
@@ -92,11 +96,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 24px 50px;
+    justify-content: space-between;
+    margin: 1.5rem 0 3rem;
 
     .logo {
-      height: 100px;
-      padding: 10px 0;
+      height: 3.33rem;
 
       img {
         display: block;

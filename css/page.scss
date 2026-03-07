@@ -21,11 +21,12 @@
   margin-bottom: 2rem;
   
   &:last-of-type {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   .sub-section-text {
     flex-grow: 1;
+    align-self: flex-end;
     max-width: 50%;
     padding-right: 3rem;
     text-align: justify;
@@ -102,7 +103,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 1.5rem 0 3rem;
+    margin: 1.5rem 0 0;
 
     .logo {
       height: 3.33rem;
@@ -124,6 +125,7 @@
     flex-direction: column;
 
     .sub-section-text {
+      align-self: unset;
       max-width: 100%;
       padding-right: 0;
       order: 1;

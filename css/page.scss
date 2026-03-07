@@ -3,6 +3,7 @@
 
 .panel-inner {
   padding: 2rem 12.5%;
+  max-width: 100%;
 }
 
 .panel-title {
@@ -28,6 +29,8 @@
     max-width: 50%;
     padding-right: 3rem;
     text-align: justify;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
     p, ul {
       margin-bottom: 1.5rem;
@@ -107,6 +110,33 @@
       img {
         display: block;
         height: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .panel-inner {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .sub-section {
+    flex-direction: column;
+
+    .sub-section-text {
+      max-width: 100%;
+      padding-right: 0;
+      order: 1;
+      box-sizing: border-box;
+    }
+
+    .sub-section-image {
+      order: -1;
+      margin-bottom: 1rem;
+
+      .image-container,
+      img {
+        width: 100%;
       }
     }
   }

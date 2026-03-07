@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let active = 0;
   let activeKey = "home";
   let lock = false;
-  const duration = 650;
+  const duration = 250;
 
   const setNavActive = (index) => {
     panelLinks.forEach((link, i) => {
@@ -26,6 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
       if (i !== index) link.classList.add(`opacity-${Math.min(i, 6)}`);
     });
   };
+
+  const hideTextFrame = (delta) => {
+    const cPanel = panels.filter(el => el.dataset.panelIndex == active)[0];
+    const textFrame = document.getElementById("text-nav-frame");
+
+    if (delta < 0 && cPanel.scrollTop < 8) {
+      textFrame.classList.remove("hide");
+    } else if (delta > 0) {
+      textFrame.classList.add("hide");
+    }
+  }
+
+  const showTextFrame = () => {
+    const textFrame = document.getElementById("text-nav-frame");
+    textFrame.classList.remove("hide");
+  }
+
+  const resetScroll = () => {
+    const cPanel = panels.filter(el => el.dataset.panelIndex == active)[0];
+    cPanel.scrollTop = 1;
+  }
 
   const highlightAndGo = (index) => {
     if (lock || index === active) return;
@@ -46,16 +67,23 @@ document.addEventListener("DOMContentLoaded", () => {
     page.style.transform = `translateX(-${active * 100}vw)`;
     window.location.hash = active > 0 ? `/${idx2key[active]}` : "";
     setNavActive(active);
+    showTextFrame();
+    resetScroll();
     setTimeout(() => (lock = false), duration);
   };
 
   page.addEventListener(
     "wheel",
     (e) => {
-      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) <= 6) return;
-      e.preventDefault();
-      if (e.deltaX > 0) highlightAndGo(active + 1);
-      else highlightAndGo(active - 1);
+      if (Math.abs(e.deltaX) < 8 && Math.abs(e.deltaY) < 8) return;
+
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && Math.abs(e.deltaY) > 8 && active > 0) {
+        hideTextFrame(e.deltaY);
+      } else if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 8) {
+        e.preventDefault();
+        if (e.deltaX > 0) highlightAndGo(active + 1);
+        else highlightAndGo(active - 1);
+      }
     },
     { passive: false }
   );

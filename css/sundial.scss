@@ -20,6 +20,13 @@
       gap: 6px;
       flex-grow: 1;
       max-width: 160px;
+
+      .hide {
+        opacity: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
+      }
     }
 
     label {

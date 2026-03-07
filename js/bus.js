@@ -1,5 +1,5 @@
-const STOPS_URL = "https://direito-a-sombra.github.io/bus-view/data/stops.tgh.json";
-const BOXES_URL = "https://direito-a-sombra.github.io/bus-view/data/objs/stops2boxes.json";
+const STOPS_URL = "https://sombra.marinagem.com/bus-view/data/stops.tgh.json";
+const BOXES_URL = "https://sombra.marinagem.com/bus-view/data/objs/stops2boxes.json";
 
 const stops = [];
 const boxes = {};
@@ -164,7 +164,7 @@ function handleImageClick(evt) {
 }
 
 function createImageEl(stop) {
-  const imgSrc = `https://direito-a-sombra.github.io/bus-view/imgs/${stop.image}`;
+  const imgSrc = `https://sombra.marinagem.com/bus-view/imgs/${stop.image}`;
 
   const imgWrapperEl = document.createElement("div");
   imgWrapperEl.classList.add("image-wrapper");
@@ -230,6 +230,7 @@ function loadImages(stops) {
     itemEl.dataset.id = stop.id;
 
     const imgEl = createImageEl(stop);
+    if (idx < 24) imgEl.src = imgEl.dataset.src;
     itemEl.appendChild(imgEl);
     itemEl.addEventListener("click", handleImageClick);
 

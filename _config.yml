@@ -20,12 +20,3 @@ exclude: [
 markdown: kramdown
 future: false
 port: 8181
-
-# Defaults
-defaults:
-  -
-    scope:
-      path: "_pages"
-      type: "pages"
-    values:
-      layout: page

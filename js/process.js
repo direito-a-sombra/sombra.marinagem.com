@@ -1,4 +1,6 @@
-const SUBTITLES_URL = "./assets/data/process_subtitles.json";
+---
+---
+const SUBTITLES_URL = "{{ 'assets/data/process_subtitles.json' | relative_url }}";
 
 const images = [];
 
@@ -40,7 +42,8 @@ function handleProcessImageClick(evt) {
 }
 
 function createProcessImageEl(img) {
-  const imgSrc = `./assets/images/process/${img.id}.jpg`;
+  const base = "{{ 'assets/images/process' | relative_url }}"
+  const imgSrc = `${base}/${img.id}.jpg`;
 
   const imgWrapperEl = document.createElement("div");
   imgWrapperEl.classList.add("image-wrapper");
@@ -83,6 +86,7 @@ function loadProcessImages(images) {
     itemEl.dataset.id = img.id;
 
     const imgEl = createProcessImageEl(img);
+    if (idx < 24) imgEl.src = imgEl.dataset.src;
     itemEl.appendChild(imgEl);
     itemEl.addEventListener("click", handleProcessImageClick);
 

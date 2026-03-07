@@ -7,7 +7,11 @@
   </head>
   <body class="slider-body">
     {% include top-nav.html %}
-    {% include text-nav.html %}
+    {% if page.url contains "pt" %}
+      {% include text-nav_pt.html %}
+    {% else %}
+      {% include text-nav.html %}
+    {% endif %}
     <div id="page" class="slider-page">
       {{ content }}
     </div>

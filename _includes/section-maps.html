@@ -5,7 +5,7 @@
     <div class="sub-section-text">
       <p>
         Navigating cities through their data is a complex process involving many variables, assumptions, and
-        decision-making. Navigating cities that haven't been planned, that grow exponentially and organically, 
+        decision-making. Navigating cities that haven't been planned, that grow exponentially and organically,
         like most Brazilian cities, I would say, present even more challenges, due to their shifting structures
         and unpredictable changes.
       </p>
@@ -15,7 +15,7 @@
         with Sony Computer Science Laboratories (CSL) Rome and the
         Center for Data Science and Artificial Intelligence
         (NCDIA) at Unifor, mapping shadow structures in Fortaleza and cross-referencing them with
-        social and economic data.
+        social and economic data. On the right, a study of Fortaleza's shadow map at 7 am.
       </p>
 
       <p>
@@ -24,10 +24,6 @@
         Yes, but of course no. A city is a house for many living beings. Every urban decision should take
         into consideration a range of factors, a mesh including rising temperatures, wind directions,
         water flow, heat gain, air quality, transportation, accessibility, life maintenance, and many more.
-      </p>
-
-      <p>
-        <!-- Follow this link for a more technical description of the development of this part of the project. -->
       </p>
     </div>
 
@@ -41,16 +37,90 @@
   <div class="sub-section">
     <div class="sub-section-text full">
       <p>
-        Some text goes here.
+        Fortaleza occupies an area of approximately 312 km², officially divided into 121 neighborhoods.
+        We analyzed different areas and their shadows at specific times of day. In the following image, you can
+        see the projected shadows of Meirelles, one of the richest areas of the city.  These images represent
+        the shadows of all buildings in the neighborhood on October 20, 2025. The shadow calculation was
+        performed using building heights and solar coordinates (altitude and azimuth) to project the rooftop
+        geometry in a specific direction, extruding and connecting it to the base. In green, you can also see
+        the tree canopies in the area.
       </p>
     </div>
   </div>
 
   <div class="sub-section">
-    <div class="wide-image-container">
-      <div class="scaled-image-container border">
-        <img src="{{ 'assets/images/maps/Edson_GIF_01_1000x1000px_slower.gif' | relative_url }}" />
-      </div>
+    <div class="wide-image-container border">
+      <img src="{{ 'assets/images/maps/Meireles_GIF_horizontal_final_trees.gif' | relative_url }}" />
     </div>
   </div>
+
+  <div class="sub-section">
+    <div class="sub-section-text full">
+      <p>
+        As a counterpoint (using the same system and dates), we analyzed the shadows of Edson Queiroz, a
+        neighborhood with a mixed economic profile and wide green spaces. An area with coexistence between
+        lower-class incomes and new luxury developments, considered dangerous for some parts of the population.
+      </p>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="wide-image-container border">
+      <img src="{{ 'assets/images/maps/Edson_GIF_horizontal_final_trees.gif' | relative_url }}" />
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-section-text full">
+      <p>
+        In the next image, we have Pirambu, one of the city's largest <em>favelas</em>, with the lowest
+        economic levels and the highest violence indices.
+      </p>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="wide-image-container border">
+      <img src="{{ 'assets/images/maps/Pirambu_GIF_horizontal_final_trees.png' | relative_url }}" />
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <div class="sub-section-text full">
+      <p>
+        But again, who needs shade? Part of this research focused on the shadow accessibility of bus stops.
+        The next animated map illustrates the solar exposure index in Fortaleza, showing the routes from each
+        hexagon's centroid to the bus stops reachable within a 15-minute walk. This indicator maps regions with
+        a thermal comfort deficit, aiding in the identification of segments where walkability is compromised by
+        direct solar radiation, as indicated by higher index values. Basically, these maps represent the shadows
+        cast by the built environment. It represents how urban density and building heights contribute to
+        pedestrian shading, regardless of vegetation. As more yellow as it gets, the higher the solar incidence
+        in that area.
+      </p>
+
+      <p>
+        However, edifications are not the only urban structures to cast shade; that's why we have also
+        projected tree canopies.
+      </p>
+
+      <p>
+        Trees are a core technical challenge in urban analysis that stems from the fundamental asymmetry between
+        built and natural landscapes. While buildings are static geometries meticulously documented in public
+        datasets, trees are living entities in perpetual flux. Within a single year, their morphology can be
+        reshaped by growth, pruning, or removal. This volatility means trees are not cataloged with the same
+        precision as architecture, resulting in significant gaps in urban inventory datasets. To mitigate this
+        data gap, most repositories rely on image recognition algorithms based on aerial orthophotos or
+        satellite imagery. Yet, this method remains constrained, as it often fails to accurately capture
+        height, species, or true canopy volume. Ultimately, the shelf life of these datasets is brief: in as
+        little as six months, the physical reality of the greenery can decouple from its digital twin, underscoring
+        the difficulty of mapping biological variables within a shifting urban fabric.
+      </p>
+      <p>
+        In other words, trees became a problem from a technical data urban analysis perspective. And that's where
+        the project had an important shift. If trees became a problem, from an artistic perspective, they should
+        be transformed into a solution.
+      </p>
+    </div>
+  </div>
+
 </div>

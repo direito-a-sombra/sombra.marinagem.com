@@ -72,16 +72,6 @@
   .wide-image-container {
     width: 100%;
 
-    .scaled-image-container {
-      width: 60%;
-      margin: 2rem auto 0;
-      overflow-y: hidden;
-
-      img {
-        margin: -5rem 0;
-      }
-    }
-
     img {
       display: block;
       width: 100%;
@@ -89,7 +79,7 @@
   }
 
   .image-container.border,
-  .scaled-image-container.border {
+  .wide-image-container.border {
     border: 2px #bbb solid;
   }
 

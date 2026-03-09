@@ -1,5 +1,20 @@
 const FORTALEZA_URL = "https://www.google.com/maps/place/Fortaleza+-+Ceará,+Brazil/@-3.7931394,-38.6020174,12z/";
 
+// dynamically re-size nav text
+function sizeNavText() {
+  const textNav = document.getElementById("text-nav");
+  const textFrame = document.getElementById("text-nav-frame");
+  const textFrameText = document.getElementById("shade-text");
+
+  const textFrameTextStyles = window.getComputedStyle(textFrameText);
+  let fontSize = textFrameTextStyles.getPropertyValue("font-size");
+
+  while (textFrame.offsetHeight > textNav.offsetHeight) {
+    textFrameText.style["font-size"] = `calc(${fontSize} * 0.95)`;
+    fontSize = textFrameTextStyles.getPropertyValue("font-size");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // —— Slider (single-page panels) ——
   const page = document.getElementById("page");
@@ -107,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setNavActive(0);
+  sizeNavText();
 
   // —— Shade text (home panel highlights) ——
   const text = document.getElementById("shade-text");

@@ -114,7 +114,7 @@ body.slider-body {
   text-transform: uppercase;
   line-height: 1.15;
   letter-spacing: 0.02em;
-  font-size: clamp(40px, 3.8vw, 52px);
+  font-size: 8vh;
   font-weight: 600;
   text-align: justify;
   max-width: 75%;
@@ -176,9 +176,15 @@ body.detail-open .text-nav .sentence.active {
 }
 
 @media (max-width: 768px) {
+  .text-nav .frame {
+    align-items: flex-start;
+    padding-top: 1.5rem;
+  }
+
   .text-nav .text {
-    font-size: clamp(30px, 5vw, 32px);
-    max-width: 90%;
+    max-width: 100%;
+    padding: 0 1.25rem;
+    font-size: 4vh;
     line-height: 1.5;
   }
 }

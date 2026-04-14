@@ -1,0 +1,29 @@
+publications:
+  - title: "Seeking shade: an agent-based model to study shadow-focused pedestrian movement: Case study in Berlin"
+    year: 2026
+    where: ScienceDirect
+    url: https://www.sciencedirect.com/science/article/pii/S2590198226000485
+  - title: "CoolPath: A Thermal Comfort Path Planning Tool for Urban Mobility"
+    year: 2026
+    where: arXiv
+    url: https://arxiv.org/abs/2602.02540
+  - title: "Global patterns of inequality in pedestrian shade provision"
+    year: 2026
+    where: Nature Communications
+    url: https://www.nature.com/articles/s41467-026-69190-w
+  - title: "CoolWalks for active mobility in urban street networks"
+    year: 2025
+    where: Nature
+    url: https://www.nature.com/articles/s41598-025-97200-2
+  - title: "Shadow Analysis"
+    year: 2025
+    where: ENVI-met
+    url: https://envi-met.com/news/shadow-analysis
+  - title: "Shadow Accrual Maps: Efficient Accumulation of City-Scale Shadows over Time"
+    year: 2018
+    where: IEEE Transactions on Visualization and Computer Graphics
+    url: https://fmiranda.me/publications/shadow-accrual-maps/tvcg-2018-shadowaccrualmaps.pdf
+  - title: "Mapping the Shadows of New York City: Every Building, Every Block"
+    year: 2016
+    where: NYT
+    url: https://www.nytimes.com/interactive/2016/12/21/upshot/Mapping-the-Shadows-of-New-York-City.html

@@ -1,0 +1,83 @@
+@font-face {
+  font-family: Cera;
+  font-weight: 100;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Thin.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 100;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-ThinItalic.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 300;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Light.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 300;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Regular.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 400;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-RegularItalic.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 500;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Medium.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 500;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 700;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Bold.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 700;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 900;
+  font-style: normal;
+  src: url(../../assets/fonts/Cera/Cera-Black.ttf);
+}
+
+@font-face {
+  font-family: Cera;
+  font-weight: 900;
+  font-style: italic;
+  src: url(../../assets/fonts/Cera/Cera-BlackItalic.ttf);
+}

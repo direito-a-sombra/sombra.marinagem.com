@@ -1,0 +1,23 @@
+.nav-container { display: block; width: 100%; height: var(--menu-height); --button-size: 1.33rem; --button-gap: calc(var(--button-size) * 0.5); padding: var(--button-gap) 0; }
+
+.nav-container .nav-button-container { display: flex; flex-direction: row; justify-content: center; gap: 0 var(--button-gap); }
+
+.nav-container .nav-button-container .nav-link { width: var(--button-size); height: var(--button-size); background-color: var(--color-hl-0); border-radius: 50%; }
+
+.nav-container .nav-button-container .nav-link.opacity-0 { opacity: 0.20; }
+
+.nav-container .nav-button-container .nav-link.opacity-1 { opacity: 0.33; }
+
+.nav-container .nav-button-container .nav-link.opacity-2 { opacity: 0.46; }
+
+.nav-container .nav-button-container .nav-link.opacity-3 { opacity: 0.59; }
+
+.nav-container .nav-button-container .nav-link.opacity-4 { opacity: 0.72; }
+
+.nav-container .nav-button-container .nav-link.opacity-5 { opacity: 0.85; }
+
+.nav-container .nav-button-container .nav-link.opacity-6 { opacity: 1; }
+
+.nav-container .nav-button-container .nav-link.opacity-sel { opacity: 1; background-color: var(--color-bg-hl); pointer-events: none; }
+
+/*# sourceMappingURL=nav.css.map */
